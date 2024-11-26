@@ -7,9 +7,9 @@ function App() {
 
   return (
     <div>
-      {tasks.length}
-
+      <h1 className="main-title">Task Manager</h1>
       <ul>
+        <h2>Current tasks ({todo.length})</h2>
         {todo.map((task, i) => (
           <li key={task.id}>
             <div style={{ fontWeight: "bold" }}>{task.title}</div>
@@ -20,6 +20,7 @@ function App() {
       </ul>
 
       <ul>
+        <h2>Completed tasks ({completed.length})</h2>
         {completed.map((task, i) => (
           <li key={task.id}>
             <div style={{ fontWeight: "bold" }}>{task.title}</div>
