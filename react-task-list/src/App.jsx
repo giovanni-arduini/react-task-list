@@ -18,7 +18,7 @@ function App() {
           </li>
         ))}
       </ul>
-
+      <hr></hr>
       <ul>
         <h2>Completed tasks ({completed.length})</h2>
         {completed.map((task, i) => (
