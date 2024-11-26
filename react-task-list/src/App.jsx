@@ -1,20 +1,35 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
-import "../data/tasks";
+import { tasks } from "../data/tasks";
 
 function App() {
-  <main className="main">
+  const completed = tasks.filter((task) => task.state === "completed");
+  const todo = tasks.filter((task) => !(task.state === "completed"));
+
+  return (
     <div>
+      {tasks.length}
+
       <ul>
-        <li></li>
+        {todo.map((task, i) => (
+          <li key={task.id}>
+            <div style={{ fontWeight: "bold" }}>{task.title}</div>
+            <div>Priority: {task.priority}</div>
+            <div>Est. time: {task.estimatedTime}</div>
+          </li>
+        ))}
+      </ul>
+
+      <ul>
+        {completed.map((task, i) => (
+          <li key={task.id}>
+            <div style={{ fontWeight: "bold" }}>{task.title}</div>
+            <div>Priority: {task.priority}</div>
+            <div>Est. time: {task.estimatedTime}</div>
+          </li>
+        ))}
       </ul>
     </div>
-    <div>
-      <ul></ul>
-    </div>
-  </main>;
+  );
 }
 
 export default App;
